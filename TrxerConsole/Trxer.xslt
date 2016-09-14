@@ -12,7 +12,8 @@
     <![CDATA[
     public string RemoveAssemblyName(string asm) 
     {
-      return asm.Substring(0,asm.IndexOf(','));
+      var index = asm.IndexOf(',');
+      return index != -1 ? asm.Substring(0,index) : asm;
     }
     public string RemoveNamespace(string asm) 
     {
